@@ -1,0 +1,19 @@
+Create a vector called "statements"
+       This will store all of the statements as Triples or Quadruples.
+
+Create a function "gen"
+       This will "generate" the 3 address code. Basically it will be syntactic sugar for
+       just printing the stuff out. It will also have to store the given statement in 
+       "statements".
+
+Create row major ordering
+       Convert 2d arrays into 1d arrays
+
+         0   1  2  3 
+       0 0   1  2  3
+       1 4   5  6  7
+       2 8   9 10 11
+       3 12 13 14 15
+
+
+	  

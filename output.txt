@@ -1,0 +1,50 @@
+TOKEN: T_VAR            LEXEME: var
+TOKEN: T_IDENT          LEXEME: B
+TOKEN: T_LBRACK         LEXEME: [
+TOKEN: T_INTCONST       LEXEME: 5
+TOKEN: T_RBRACK         LEXEME: ]
+TOKEN: T_LBRACK         LEXEME: [
+TOKEN: T_INTCONST       LEXEME: 4
+TOKEN: T_RBRACK         LEXEME: ]
+TOKEN: T_SEMICOL        LEXEME: ;
+N -> epsilon
+N -> [ INTCONST ] N
+N -> [ INTCONST ] N
+
+>>> Added B to symbol table
+>>> with the following subscriptInfo:
+     s[0] = 5
+     s[1] = 4
+TOKEN: T_LCURLY         LEXEME: {
+V -> epsilon
+V -> id N ; V
+TOKEN: T_IDENT          LEXEME: B
+TOKEN: T_LBRACK         LEXEME: [
+TOKEN: T_INTCONST       LEXEME: 1
+E -> INTCONST
+TOKEN: T_RBRACK         LEXEME: ]
+L -> id [ E ]
+
+*** Found B in symbol table
+*** This array has the following subscriptInfo:
+     s[0] = 5
+     s[1] = 4
+
+TOKEN: T_LBRACK         LEXEME: [
+TOKEN: T_INTCONST       LEXEME: 3
+E -> INTCONST
+TOKEN: T_RBRACK         LEXEME: ]
+L -> L [ E ]
+TOKEN: T_ASSIGN         LEXEME: =
+TOKEN: T_INTCONST       LEXEME: 17
+E -> INTCONST
+TOKEN: T_SEMICOL        LEXEME: ;
+A -> L = E
+S -> A ;
+TOKEN: T_RCURLY         LEXEME: }
+C -> epsilon
+C -> S ; C
+P -> var V { C }
+
+---- Completed parsing ----
+
